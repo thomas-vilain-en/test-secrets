@@ -28,7 +28,4 @@ jobs:
         with:
           secrets: ${{ toJSON(secrets) }}
       - run: echo "Value of TEST_SECRET:$TEST_SECRET"
-      - uses: oNaiPs/secrets-to-env-action@v1
-        with:
-          secrets: ${{ toJSON(variables) }}
       - run: echo "Value of TEST_VAR:$TEST_VAR"
