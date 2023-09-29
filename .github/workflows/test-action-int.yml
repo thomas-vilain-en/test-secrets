@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI int
 
 # Controls when the workflow will run
 on:
@@ -32,7 +32,7 @@ jobs:
       
       - uses: oNaiPs/secrets-to-env-action@v1
         with:
-          vars: ${{ toJSON(vars) }}
+          secrets: ${{ toJSON(vars) }}
           
       - run: echo "Value of TEST_SECRET:$TEST_SECRET"
       
