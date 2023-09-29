@@ -30,4 +30,4 @@ jobs:
       
       - name: 'Create env file'
         run: |
-          echo "${{ secrets.ENV_FILE }} ${{ vars.ENV_FILE }}" > .env
+          echo "${{ secrets.FULL_ENV_FILE }} ${{ vars.FULL_ENV_FILE }}" > .env
