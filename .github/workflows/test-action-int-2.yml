@@ -27,7 +27,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
+      - name: Read file contents
+        id: read_file_before
+        uses: andstor/file-reader-action@v1
+        with:
+          path: ".env"
+
+      - name: File contents
+        run: echo "${ steps.read_file_before.outputs.contents }"
       
       - name: 'Create env file'
         run: |
           echo "${{ secrets.FULL_ENV_FILE }} ${{ vars.FULL_ENV_FILE }}" > .env
+
+      - name: Read file contents
+        id: read_file_after
+        uses: andstor/file-reader-action@v1
+        with:
+          path: ".env"
+
+      - name: File contents
+        run: echo "${ steps.read_file_after.outputs.contents }"
