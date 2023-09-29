@@ -1,3 +1,5 @@
+# Test using action secrets-to-env : https://github.com/marketplace/actions/export-all-secrets-to-env-variables
+
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -26,11 +28,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - uses: oNaiPs/secrets-to-env-action@v1
+      - uses: oNaiPs/secrets-to-env-action@v1.3
         with:
           secrets: ${{ toJSON(secrets) }}
       
-      - uses: oNaiPs/secrets-to-env-action@v1
+      - uses: oNaiPs/secrets-to-env-action@v1.3
         with:
           secrets: ${{ toJSON(vars) }}
           
