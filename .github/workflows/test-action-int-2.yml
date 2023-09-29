@@ -30,7 +30,7 @@ jobs:
 
       - name: Read file contents
         id: read_file_before
-        uses: andstor/file-reader-action@v1
+        uses: andstor/file-reader-action@v1.0.0
         with:
           path: ".env"
 
@@ -43,7 +43,7 @@ jobs:
 
       - name: Read file contents
         id: read_file_after
-        uses: andstor/file-reader-action@v1
+        uses: andstor/file-reader-action@v1.0.0
         with:
           path: ".env"
 
