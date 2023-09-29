@@ -33,10 +33,10 @@ jobs:
         uses: andstor/file-reader-action@v1.0.0
         with:
           path: ".env"
-      
-      - name: 'Create env file'
-        run: |
-          echo "${{ secrets }} ${{ vars }}" > .env
+
+      - uses: oNaiPs/secrets-to-env-action@v1.3
+        with:
+          secrets: ${{ toJSON({ ...secrets, ...vars }) }}
 
       - name: Read file contents
         id: read_file_after
